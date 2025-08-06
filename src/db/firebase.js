@@ -18,17 +18,17 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 
-
 const signIn = async () => {
     try {
         await signInAnonymously(auth);
-        console.log("Firebase authentication successful.");
+        console.log("Autenticación con Firebase exitosa.");
     } catch (error) {
-        console.error("Firebase authentication error:", error);
+        console.error("Error de autenticación con Firebase:", error);
     }
 };
 
 
 signIn();
+
 
 export { db, auth };
