@@ -1,23 +1,23 @@
+import React from 'react';
+import './ItemDetail.css';
 
 
-
-
-const ItemDetail = ({ product }) => {
-    const { name, description, price, img, stock } = product;
-
-    return (
-        <div className="item-detail">
-            <img src={img} alt={name} className="detail-img" />
-            <div className="detail-info">
-                <h2>{name}</h2>
-                <p>{description}</p>
-                <p>Precio: ${price}</p>
-                <p>Stock disponible: {stock}</p>
-                {}
-                <button>Agregar al Carrito</button>
-            </div>
-        </div>
-    );
+const ItemDetail = ({ name, img, category, description, price, stock }) => {
+  return (
+    <div className="item-detail">
+      <div className="item-detail-image-container">
+        {}
+        <img src={img} alt={name} className="item-detail-image" />
+      </div>
+      <div className="item-detail-info">
+        <h2 className="item-detail-name">{name}</h2>
+        <p className="item-detail-category">Categoría: {category}</p>
+        <p className="item-detail-description">{description}</p>
+        <p className="item-detail-price">${price}</p>
+        <p className="item-detail-stock">Stock disponible: {stock}</p>
+      </div>
+    </div>
+  );
 };
 
 export default ItemDetail;

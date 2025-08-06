@@ -1,35 +1,29 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
 
-import "./App.css";
-
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout'; 
 
 import './App.css';
-import Navbar from './components/NavBar/Navbar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'; // Asumo que lo necesitas si ya lo importaste
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  
-
   return (
     <BrowserRouter>
-      <div className="App">
-        <Navbar />
+      <CartProvider>
+        <NavBar />
         <Routes>
-          {}
-          <Route path="/" element={<ItemListContainer />} /> 
-          {}
+          <Route path="/" element={<ItemListContainer />} />
           <Route path="/category/:categoryId" element={<ItemListContainer />} />
-          
-          {}
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-          
-          {}
-          <Route path="/contacto" element={<h1>Contacto</h1>} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} /> {}
+          <Route path="*" element={<h1>404 NOT FOUND</h1>} />
         </Routes>
-      </div>
+      </CartProvider>
     </BrowserRouter>
   );
 }

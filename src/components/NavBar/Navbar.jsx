@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import smartlogo from "../../assets/smartlogo.png";
-import CardWidget from "../CarWidget.jsx";
+import CardWidget from "../CartWidget/CarWidget";
+
 import "./navbar.css";
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
           <NavLink to="/category/iluminacion" className={({ isActive }) => isActive ? "active-link" : ""}>Iluminación</NavLink>
         </li>
         <li>
-          <NavLink to="/category/climatizacion" className={({ isActive }) => isActive ? "active-link" : ""}>Climatización</NavLink>
+          <NavLink to="/category/Climatizacion" className={({ isActive }) => isActive ? "active-link" : ""}>Climatización</NavLink>
         </li>
         <li>
           <NavLink to="/category/seguridad" className={({ isActive }) => isActive ? "active-link" : ""}>Seguridad</NavLink>
