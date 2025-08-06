@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import smartlogo from "../../assets/smartlogo.png";
 import CardWidget from "../CartWidget/CarWidget";
 
-import "./navbar.css";
+import "./NavBar.css";
 
 const Navbar = () => {
   return (
